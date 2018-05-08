@@ -6,10 +6,6 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		62587CC820A1A35A00D23447 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62587CC720A1A35A00D23447 /* main.cpp */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		62587CC220A1A35900D23447 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -23,10 +19,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6211572220A1A45800D66072 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62587CC420A1A35900D23447 /* Hamilton */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hamilton; sourceTree = BUILT_PRODUCTS_DIR; };
-		62587CC720A1A35A00D23447 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		62587CCE20A1A37800D23447 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		62DF7E3720A1A9ED004EC01C /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+		62DF7E3820A1AA13004EC01C /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
+		62DF7E3920A1AA61004EC01C /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		62DF7E3A20A1AA69004EC01C /* srctest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = srctest; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,10 +40,11 @@
 		62587CBB20A1A35900D23447 = {
 			isa = PBXGroup;
 			children = (
-				6211572220A1A45800D66072 /* README.md */,
-				62587CC620A1A35900D23447 /* Hamilton */,
 				62587CC520A1A35900D23447 /* Products */,
-				62587CCE20A1A37800D23447 /* README.md */,
+				62DF7E3820A1AA13004EC01C /* doc */,
+				62DF7E3920A1AA61004EC01C /* include */,
+				62DF7E3720A1A9ED004EC01C /* src */,
+				62DF7E3A20A1AA69004EC01C /* srctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,14 +54,6 @@
 				62587CC420A1A35900D23447 /* Hamilton */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		62587CC620A1A35900D23447 /* Hamilton */ = {
-			isa = PBXGroup;
-			children = (
-				62587CC720A1A35A00D23447 /* main.cpp */,
-			);
-			path = Hamilton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,7 +112,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62587CC820A1A35A00D23447 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
