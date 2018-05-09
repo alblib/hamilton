@@ -6,8 +6,12 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		62DF7E4820A26AF6004EC01C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62DF7E4720A26AF6004EC01C /* main.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		62587CC220A1A35900D23447 /* CopyFiles */ = {
+		62DF7E4220A26AF6004EC01C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -19,15 +23,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		62587CC420A1A35900D23447 /* Hamilton */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Hamilton; sourceTree = BUILT_PRODUCTS_DIR; };
-		62DF7E3720A1A9ED004EC01C /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
-		62DF7E3820A1AA13004EC01C /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
-		62DF7E3920A1AA61004EC01C /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
-		62DF7E3A20A1AA69004EC01C /* srctest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = srctest; sourceTree = "<group>"; };
+		62DF7E4420A26AF6004EC01C /* HamiltonTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HamiltonTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62DF7E4720A26AF6004EC01C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		62DF7E4E20A26B1F004EC01C /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = doc; path = ../../doc; sourceTree = "<group>"; };
+		62DF7E4F20A26B1F004EC01C /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../include; sourceTree = "<group>"; };
+		62DF7E5020A26B1F004EC01C /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		62587CC120A1A35900D23447 /* Frameworks */ = {
+		62DF7E4120A26AF6004EC01C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,88 +41,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62587CBB20A1A35900D23447 = {
+		62DF7E3B20A26AF6004EC01C = {
 			isa = PBXGroup;
 			children = (
-				62587CC520A1A35900D23447 /* Products */,
-				62DF7E3820A1AA13004EC01C /* doc */,
-				62DF7E3920A1AA61004EC01C /* include */,
-				62DF7E3720A1A9ED004EC01C /* src */,
-				62DF7E3A20A1AA69004EC01C /* srctest */,
+				62DF7E4620A26AF6004EC01C /* HamiltonTest */,
+				62DF7E4520A26AF6004EC01C /* Products */,
+				62DF7E4E20A26B1F004EC01C /* doc */,
+				62DF7E4F20A26B1F004EC01C /* include */,
+				62DF7E5020A26B1F004EC01C /* src */,
 			);
 			sourceTree = "<group>";
 		};
-		62587CC520A1A35900D23447 /* Products */ = {
+		62DF7E4520A26AF6004EC01C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62587CC420A1A35900D23447 /* Hamilton */,
+				62DF7E4420A26AF6004EC01C /* HamiltonTest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		62DF7E4620A26AF6004EC01C /* HamiltonTest */ = {
+			isa = PBXGroup;
+			children = (
+				62DF7E4720A26AF6004EC01C /* main.cpp */,
+			);
+			path = HamiltonTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		62587CC320A1A35900D23447 /* Hamilton */ = {
+		62DF7E4320A26AF6004EC01C /* HamiltonTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62587CCB20A1A35A00D23447 /* Build configuration list for PBXNativeTarget "Hamilton" */;
+			buildConfigurationList = 62DF7E4B20A26AF6004EC01C /* Build configuration list for PBXNativeTarget "HamiltonTest" */;
 			buildPhases = (
-				62587CC020A1A35900D23447 /* Sources */,
-				62587CC120A1A35900D23447 /* Frameworks */,
-				62587CC220A1A35900D23447 /* CopyFiles */,
+				62DF7E4020A26AF6004EC01C /* Sources */,
+				62DF7E4120A26AF6004EC01C /* Frameworks */,
+				62DF7E4220A26AF6004EC01C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Hamilton;
-			productName = Hamilton;
-			productReference = 62587CC420A1A35900D23447 /* Hamilton */;
+			name = HamiltonTest;
+			productName = HamiltonTest;
+			productReference = 62DF7E4420A26AF6004EC01C /* HamiltonTest */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		62587CBC20A1A35900D23447 /* Project object */ = {
+		62DF7E3C20A26AF6004EC01C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Protelum Liberium";
 				TargetAttributes = {
-					62587CC320A1A35900D23447 = {
+					62DF7E4320A26AF6004EC01C = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = 62587CBF20A1A35900D23447 /* Build configuration list for PBXProject "Hamilton" */;
+			buildConfigurationList = 62DF7E3F20A26AF6004EC01C /* Build configuration list for PBXProject "HamiltonTest" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 62587CBB20A1A35900D23447;
-			productRefGroup = 62587CC520A1A35900D23447 /* Products */;
+			mainGroup = 62DF7E3B20A26AF6004EC01C;
+			productRefGroup = 62DF7E4520A26AF6004EC01C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				62587CC320A1A35900D23447 /* Hamilton */,
+				62DF7E4320A26AF6004EC01C /* HamiltonTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		62587CC020A1A35900D23447 /* Sources */ = {
+		62DF7E4020A26AF6004EC01C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DF7E4820A26AF6004EC01C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		62587CC920A1A35A00D23447 /* Debug */ = {
+		62DF7E4920A26AF6004EC01C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -176,7 +189,7 @@
 			};
 			name = Debug;
 		};
-		62587CCA20A1A35A00D23447 /* Release */ = {
+		62DF7E4A20A26AF6004EC01C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -227,7 +240,7 @@
 			};
 			name = Release;
 		};
-		62587CCC20A1A35A00D23447 /* Debug */ = {
+		62DF7E4C20A26AF6004EC01C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -236,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		62587CCD20A1A35A00D23447 /* Release */ = {
+		62DF7E4D20A26AF6004EC01C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -248,25 +261,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62587CBF20A1A35900D23447 /* Build configuration list for PBXProject "Hamilton" */ = {
+		62DF7E3F20A26AF6004EC01C /* Build configuration list for PBXProject "HamiltonTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				62587CC920A1A35A00D23447 /* Debug */,
-				62587CCA20A1A35A00D23447 /* Release */,
+				62DF7E4920A26AF6004EC01C /* Debug */,
+				62DF7E4A20A26AF6004EC01C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62587CCB20A1A35A00D23447 /* Build configuration list for PBXNativeTarget "Hamilton" */ = {
+		62DF7E4B20A26AF6004EC01C /* Build configuration list for PBXNativeTarget "HamiltonTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				62587CCC20A1A35A00D23447 /* Debug */,
-				62587CCD20A1A35A00D23447 /* Release */,
+				62DF7E4C20A26AF6004EC01C /* Debug */,
+				62DF7E4D20A26AF6004EC01C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 62587CBC20A1A35900D23447 /* Project object */;
+	rootObject = 62DF7E3C20A26AF6004EC01C /* Project object */;
 }
