@@ -142,6 +142,15 @@ namespace ratio{
           return std::basic_string<CharT>(1, CharT('d'));
       }
   };
+  
+  template <class CharT>
+  struct ratio_string<ratio<1,1>, CharT>
+  {
+      static std::basic_string<CharT> symbol()
+      {
+          return std::basic_string<CharT>();
+      }
+  };
 
   template <class CharT>
   struct ratio_string<std::deca, CharT>
