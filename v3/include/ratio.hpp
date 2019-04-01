@@ -49,7 +49,7 @@ namespace Hamilton {
 
 
 
-        template <class Ratio, class CharT>
+        template <class Ratio, class CharT = char>
 
         struct ratio_string
 
