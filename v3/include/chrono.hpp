@@ -13,9 +13,9 @@
 
 #include <cmath>
 
-#include <cstdint>
-
 #include <string>
+
+#include <vector>
 
 #include "ratio.hpp"
 
@@ -231,9 +231,57 @@ namespace Hamilton {
 
         };
 
+        using steady_high_resolution_clock = typename ::std::conditional<::std::chrono::high_resolution_clock::is_steady, typename ::std::chrono::high_resolution_clock, typename ::std::chrono::steady_clock>::type;
+
+        template <class TrivialClock>
+
+        class basic_chronometer {
+
+        public:
+
+            using time_point = typename TrivialClock::time_point;
+
+            using duration = typename TrivialClock::duration;
+
+        private:
+
+            ::std::vector<time_point> data;
+
+        public:
+
+            void clear() { data.clear(); }
+
+            const time_point& start() {
+
+                data.push_back(TrivialClock::now()); 
+                
+                return data.back();
+
+            }
+
+            duration lap() {
+
+                data.push_back(TrivialClock::now());
+
+                return data.back() - data.front();
+
+            }
+
+        };
+
+        using chronometer = typename basic_chronometer<typename steady_high_resolution_clock>;
+
+    }
 
 
 
+    namespace literals {
+        
+        namespace chrono_literals {
+
+            using namespace ::std::literals::chrono_literals;
+
+        }
 
     }
 
