@@ -13,6 +13,8 @@ namespace Hamilton {
 
     namespace ratio {
 
+        // MARK: - SI Prefixes
+        
         using std::ratio;
 
         using std::atto;
@@ -48,6 +50,8 @@ namespace Hamilton {
         using std::exa;
 
 
+        // MARK: String For SI Prefixes
+        
 
         template <class Ratio, class CharT = char>
 
@@ -272,7 +276,7 @@ namespace Hamilton {
 
             {
 
-                return std::basic_string<CharT>(1, CharT('da'));
+                return std::basic_string<CharT>{CharT('d'), CharT('a')};
 
             }
 
@@ -404,6 +408,8 @@ namespace Hamilton {
 
         };
 
+        
+        // MARK: - IEC Prefixes
 
 
         using kibi = ratio<1024, 1>;
@@ -419,6 +425,7 @@ namespace Hamilton {
         using exbi = ratio<1152921504606846976LL, 1>;
 
 
+        // MARK: String For IEC Prefixes
 
         template <class CharT>
 
