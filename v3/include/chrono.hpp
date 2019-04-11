@@ -601,7 +601,17 @@ std::basic_ostream<CharT, Traits>& operator <<
 
 (std::basic_ostream<CharT, Traits>& os, const Hamilton::chrono::time_point<TrivialClock>& op) {
     
-    std::time_t tym = TrivialClock::to_time_t(op);
+    using std::chrono::system_clock;
+    
+    using system_duration = system_clock::duration;
+    
+    using std::chrono::duration_cast;
+    
+    auto system_now = system_clock::now();
+    
+    auto time_now = TrivialClock::now();
+    
+    std::time_t tym = std::chrono::system_clock::to_time_t(system_now + duration_cast<system_duration>(op - time_now));
     
     return os << std::ctime(&tym);
     
