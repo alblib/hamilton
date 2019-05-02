@@ -12,7 +12,10 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    
+#ifdef __unix__
     std::cout << "Hello, World!\n";
-    std::cout << (Hamilton::endian::native == Hamilton::endian::little);
+#endif
+    //std::cout << (Hamilton::endian::native == Hamilton::endian::little);
     return 0;
 }
