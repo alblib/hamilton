@@ -3,6 +3,7 @@
 
 #include <iterator>
 #include "endian.hpp"
+#include <type_traits>
 
 namespace Hamilton {
     namespace intfixtypes_namespace{
@@ -14,13 +15,7 @@ namespace Hamilton {
             /** Gives uninitialized array. */
             endian_considered_array(std::nullptr_t){}
             /** Gives initialized array. */
-            endian_considered_array(){
-                Class* start = defined;
-                Class* end   = defined + Size;
-                for(; start != end; ++start){
-                    *start = 0;
-                }
-            }
+            constexpr endian_considered_array(): defined() {}
             
             #if __HAM_ENDIAN_ORDER == __HAM_ENDIAN_BIG
             using iterator       = ::std::reverse_iterator<Class *>;
@@ -87,10 +82,11 @@ namespace Hamilton {
                 iterator start = *this;
                 iterator end   = start + Size;
                 const_iterator start2 = op;
+                bool round = false;
                 for(; start != end; ++start, ++start2){
-                    *start2 = ~*start;
+                    *start += (round ? (*start2 + 1) : *start2);
+                    round = round ? (static_cast<std::make_unsigned<Class>>(*start2) >= static_cast<std::make_unsigned<Class>>(*start)) : (static_cast<std::make_unsigned<Class>>(*start2) > static_cast<std::make_unsigned<Class>>(*start));
                 }
-                return result;
             }
             endian_considered_array add_copy(const endian_considered_array& op) const{
                 endian_considered_array result(nullptr);
@@ -98,9 +94,10 @@ namespace Hamilton {
                 const_iterator end    = start + Size;
                 const_iterator start2 = op;
                 iterator start_result = result;
-                bool 
+                bool round = false;
                 for(; start != end; ++start, ++start2, ++start_result){
-                    *start_result = *start + *start2;
+                    *start_result = *start + *start2 + (round ? 1 : 0);
+                    round = round ? (static_cast<std::make_unsigned<Class>>(*start2) >= static_cast<std::make_unsigned<Class>>(*start_result)) : (static_cast<std::make_unsigned<Class>>(*start2) > static_cast<std::make_unsigned<Class>>(*start_result));
                 }
                 return result;
             }
