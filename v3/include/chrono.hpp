@@ -314,7 +314,7 @@ std::basic_ostream<CharT, Traits>& operator <<
     
     os << std::setprecision(new_size);
     
-    os << op.count() << Hamilton::chrono::period_string<Hamilton::chrono::duration<Rep, Period>, CharT>::symbol();
+    os << op.count() << " " << Hamilton::chrono::period_string<Hamilton::chrono::duration<Rep, Period>, CharT>::symbol();
     
     os.flags(flags);
     
@@ -404,7 +404,8 @@ std::basic_ostream<CharT, Traits>& operator <<
     
     long double new_size = size;
     
-    const duration<Rep, Period> epsilon = op / std::powl(10, new_size) / 2;
+    //const duration<Rep, Period> -> const duration<common_type<Rep,long double>, Period>
+    auto epsilon = op / std::powl(10, new_size) / 2;
     
     bool printed_sth = false, hr_printed = false, yr_printed = false, d_printed = false;
     
@@ -534,7 +535,7 @@ std::basic_ostream<CharT, Traits>& operator <<
         
         if (!printed_sth){
             
-            switch (int((std::log10l(secs.count()) + 12) + 3)){
+            switch (int((std::log10l(secs.count()) + 12) / 3)){
                     
                 case 4:
                     
