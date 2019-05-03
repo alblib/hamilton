@@ -5,6 +5,8 @@
 
 #include <string>
 
+#include <cstdint>
+
 /* https://stackoverflow.com/questions/23843758/high-resolution-clocks-highest-resolution-is-1000ns */
 
 
@@ -12,10 +14,31 @@
 namespace Hamilton {
 
     namespace ratio {
-
-        // MARK: - SI Prefixes
+        
+        // MARK: - Define ratio
         
         using std::ratio;
+        
+        /** Returns ratio's value in real number variable. */
+        template <class Ratio>
+        class ratio_value;
+        
+        template <std::intmax_t Num, std::intmax_t Denom>
+        class ratio_value<ratio<Num, Denom>>{
+            
+            /** Returns ratio's value in real number variable. */
+            constexpr static long double value = static_cast<long double>(Num) / static_cast<long double>(Denom);
+        };
+        
+#if defined(__cpp_inline_variables) && __cpp_inline_variables >= 201606L
+        template <class Ratio>
+        inline constexpr long double ratio_value_v = ratio_value<Ratio>::value;
+#else
+        template <class Ratio>
+        constexpr long double ratio_value_v = ratio_value<Ratio>::value;
+#endif
+        
+        // MARK: - SI Prefixes
 
         using std::atto;
 
