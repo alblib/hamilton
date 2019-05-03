@@ -9,6 +9,8 @@
 #include <iostream>
 #include "../../../include/endian.hpp"
 #include "../../../include/intfixtypes.hpp"
+#include "../../../include/memory.hpp"
+#include "../../../include/system.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -17,5 +19,10 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
 #endif
     //std::cout << (Hamilton::endian::native == Hamilton::endian::little);
+    
+    using namespace Hamilton::literals::system_literals;
+    
+    std::cout << 3432952_bytes;
+    
     return 0;
 }
