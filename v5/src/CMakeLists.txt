@@ -1,0 +1,26 @@
+file(GLOB ALL_FILES "${CMAKE_CURRENT_LIST_DIR}/*")
+set(HEADERS "")
+set(SOURCES "")
+foreach(FILE ${ALL_FILES})
+  get_filename_component(EXT ${FILE} EXT)
+  if(EXT STREQUAL ".c" OR EXT STREQUAL ".cpp")
+    list(APPEND SOURCES ${FILE})
+  elseif(EXT STREQUAL "" OR EXT STREQUAL ".h" OR EXT STREQUAL ".hpp")
+    list(APPEND HEADERS ${FILE})
+  endif()
+endforeach()
+
+source_group(TREE ${CMAKE_CURRENT_LIST_DIR} PREFIX "Source Files" FILES ${SOURCES})
+source_group(TREE ${CMAKE_CURRENT_LIST_DIR} PREFIX "Header Files" FILES ${HEADERS})
+
+
+if(SOURCES)  # if any source file
+  option(${PROJECT_NAME}_BUILD_SHARED "Build ${PROJECT_NAME} as a shared library" OFF)
+  if(${PROJECT_NAME}_BUILD_SHARED)
+    add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS})
+  else()
+    add_library(${PROJECT_NAME} SHARED ${SOURCES} ${SOURCES})
+  endif()
+else()
+  add_library(${PROJECT_NAME} INTERFACE)
+endif()
